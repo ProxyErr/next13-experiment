@@ -1,3 +1,5 @@
+// Adding comments for initial commit
+
 export async function GET(request) {
     return new Response('Hello, Next.js 13!')
   }
