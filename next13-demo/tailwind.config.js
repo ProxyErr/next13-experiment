@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         roboto: ["var(--font-roboto)"],
       },
+      gridTemplateColumns: {
+        fluid: "repeat(auto-fit,minmax(15rem,1fr))",
+      },
     },
   },
   plugins: [],
