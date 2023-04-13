@@ -1,11 +1,18 @@
 import Link from "next/link";
 import Character from "./Character";
+import PagPage from "./pagpage";
+
+
+
 
 
 export default async function Home() {
-  const data = await fetch(`https://rickandmortyapi.com/api/character`);
+  let page = ``;
+  const data = await fetch(
+    `https://rickandmortyapi.com/api/character/${page}`
+  )
   const res = await data.json();
-  
+
   return (
     <main>
       <div className="grid gap-16 grid-cols-fluid">
@@ -17,7 +24,13 @@ export default async function Home() {
             name={results.name}
             image={results.image}
           />
-        ))};
+        ))}
+        <PagPage 
+          count={res.info.count}
+          pages={res.info.pages}
+          next={res.info.next}
+          prev={res.info.prev}
+        />
       </div>
     </main>
   );

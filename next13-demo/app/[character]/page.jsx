@@ -1,7 +1,7 @@
 
 //Gets Initial Id and pre-renders all charcter pages
 export async function generateStaticParams(){
-  const data = await fetch(`https://rickandmortyapi.com/api/character`)
+  const data = await fetch(`https://rickandmortyapi.com/api/character/`)
   const res = await data.json()
   return res.results.map((results) => ({
      results: toString(results.id),
