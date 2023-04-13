@@ -1,3 +1,15 @@
+
+//Gets Initial Id and pre-renders all charcter pages
+export async function generateStaticParams(){
+  const data = await fetch(`https://rickandmortyapi.com/api/character`)
+  const res = await data.json()
+  return res.results.map((results) => ({
+     results: toString(results.id),
+  }))
+}
+
+
+//gets character by Id
 export default async function CharacterDetail({ params }) {
   const { character: id } = params;
   const data = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
@@ -34,10 +46,8 @@ export default async function CharacterDetail({ params }) {
             <div className="mt-4">
               <div className="prose max-w-none">
                 Location: {res.location.name}
-
               </div>
             </div>
-
           </div>
         </div>
       </div>

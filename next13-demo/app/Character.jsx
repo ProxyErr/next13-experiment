@@ -8,8 +8,9 @@ export default function Character({ name, id, image, species }) {
         alt="Developer"
         src={image}
         className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-        width={200}
-        height={200}
+        width={1000}
+        height={1000}
+        priority
       />
       <div className="relative p-4 sm:p-6 lg:p-8">
         <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
